@@ -72,6 +72,12 @@
         result = frameProcessor.Result;
       }
     }
-    static QrCaptureFrameProcessor frameProcessor;
+    
+    // Dispose camera to be opened again
+    public static void Dispose()
+    {
+        frameProcessor?.Dispose();
+        frameProcessor = null;
+    }
   }
 }
